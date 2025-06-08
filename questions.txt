@@ -1,0 +1,191 @@
+Question: Antysemityzm to:
+A) przesąd rasowy
+B) stereotyp
+C) dyskryminacja mniejszości
+D) przejaw nietolerancji
+E) wszystko to razem
+Correct: E;
+
+Question: Stereotyp to:
+A) pewien stan umysłu
+B) rodzaj działania
+C) uproszczony i jednostronny obraz rzeczywistości
+D) określona postawa
+E) typ idealny
+Correct: C;
+
+Question: Rosnące podobieństwo (zuniformizowanie) stylu życia, wzorów konsumpcyjnych, poglądów, urządzeń technicznych w skali całego świata określamy jako:
+A) akulturację
+B) globalizację
+C) etnocentryzm
+D) konflikt kulturowy
+E) relatywną deprywację
+Correct: B;
+
+Question: Uścisk dłoni jako forma przywitania to:
+A) kompleks kulturowy
+B) konfiguracja kulturowa
+C) wartość kulturowa
+D) element kulturowy
+E) mit kulturowy
+Correct: D;
+
+Question: Przeciwieństwem stereotypu jest:
+A) dogmat religijny
+B) ideologia
+C) statystyczne rozkłady cech zbiorowości
+D) typ idealny
+E) przesąd etniczny
+Correct: C;
+
+Question: Przeciwieństwem etnocentryzmu jest:
+A) nacjonalizm
+B) patriotyzm
+C) relatywizm kulturowy
+D) empiryzm
+E) szowinizm
+Correct: C;
+
+Question: Socjologia pozytywistyczna nakazuje:
+A) formułować optymistyczne prognozy społeczne
+B) naśladować metody i techniki badawcze nauk przyrodniczych
+C) badać pozytywne strony życia społecznego
+D) badać przy pomocy typów idealnych
+E) interpretować znaczenie tekstów
+Correct: B;
+
+Question: „Polacy to naród wybrany, którego obyczaje są najlepsze i powinny być przejęte przez inne narody". Taki pogląd to przejaw:
+A) pluralizmu
+B) tolerancji
+C) etnocentryzmu
+D) relatywizmu kulturowego
+E) konserwatyzmu
+Correct: C;
+
+Question: Składnikami struktury normatywnej społeczeństwa są m.in.:
+A) przekonania
+B) pozycje społeczne
+C) interesy
+D) wartości
+E) szansę życiowe
+Correct: D;
+
+Question: Pojęcie jaźni odzwierciedlonej odnosi się do:
+A) naszych aspiracji
+B) przesądów grupowych
+C) tego, jak inni rzeczywiście nas oceniają
+D) naszych wyobrażeń o tym, jak wyglądamy w oczach innych
+E) stereotypów etnicznych
+Correct: D;
+
+Question: Prestiż jest określany przez:
+A) zakres władzy
+B) szacunek społeczny
+C) wpływy
+D) układy i koneksje
+E) poziom dochodów
+Correct: B;
+
+Question: Które z poniższych twierdzeń nie jest przejawem stereotypu:
+A) Polskie dziewczyny są najładniejsze na świecie
+B) Niebo we Włoszech jest najbardziej niebieskie
+C) Japończycy produkują najwięcej samochodów na świecie
+D) Anglicy są najlepiej wychowanym narodem świata
+E) Murzyni są zacofani umysłowo
+Correct: C;
+
+Question: Socjalizacja permanentna przejawia się w następujących formach, z wyjątkiem jednej. Której?
+A) socjalizacja do zawodu
+B) wdrażanie do kultury politycznej
+C) nauka mówienia i czytania
+D) resocjalizacja
+E) socjalizacja małżeńska
+Correct: C;
+
+Question: Zakon to przykład grupy:
+A) pierwotnej
+B) przypisanej
+C) „żarłocznej" (totalitarnej)
+D) segmentowej
+E) zadaniowej
+Correct: C;
+
+Question: Socjologia różni się od wiedzy potocznej tym, że:
+A) uprawiają ją zawodowo socjologowie
+B) jest wykładana na uniwersytecie
+C) dostarcza wiedzy pewnej i niewątpliwej
+D) dostarcza wiedzy systematycznej i empirycznie potwierdzonej
+E) umożliwia naukowe kierowanie państwem
+Correct: D;
+
+Question: Socjologia interesuje się jednostką jako:
+A) konkretną z imienia i nazwiska osobą
+B) osobowością człowieka
+C) organizmem biologicznym
+D) podmiotem działań, interakcji i stosunków społecznych
+E) obywatelem, uczestnikiem życia politycznego
+Correct: D;
+
+Question: Role społeczne to składniki:
+A) struktury idealnej
+B) struktury interakcyjnej
+C) struktury normatywnej
+D) struktury interesów
+E) grupy społecznej
+Correct: C;
+
+Question: Kontrola społeczna to:
+A) sprawdzanie działania urzędów przez komisje obywatelskie
+B) system sankcji społecznych wymierzanych za akty dewiacji
+C) nadzór parlamentu nad ministerstwami
+D) nadzór NIK nad administracją publiczną
+E) forma działania ruchów społecznych
+Correct: B;
+
+Question: Socjalizacja antycypująca to:
+A) to samo co resocjalizacja
+B) naśladowanie norm i wartości grup, do których się pragnie należeć
+C) socjalizacja we wczesnym dzieciństwie
+D) przygotowanie do śmierci
+E) edukacja szkolna
+Correct: B;
+
+Question: Instytucje społeczne w rozumieniu socjologicznym to:
+A) zespoły stosunków społecznych
+B) budynki państwowe
+C) więzienia, szpitale i przedszkola
+D) przepisane sposoby postępowania (reguły, normy, wartości) w danej dziedzinie
+E) to samo, co grupy społeczne
+Correct: D;
+
+Question: Stosunki społeczne wiążą ze sobą:
+A) działania
+B) osoby
+C) pozycje (statusy)
+D) normy
+E) wartości
+Correct: C;
+
+Question: Autorytet, w sensie socjologicznym to:
+A) władza oparta tylko na przymusie
+B) przewaga jednej grupy społecznej nad drugą
+C) władza prawomocna
+D) dominacja silnej charyzmatycznej jednostki nad grupą
+E) społeczeństwo rządzone przez mężczyzn obdarzonych silnym charakterem
+Correct: C;
+
+Question: Tabu kulturowe to inaczej:
+A) nakaz
+B) przyzwolenie
+C) zakaz
+D) preferencja
+E) ideał kulturowy
+Correct: C;
+
+Question: Stalin był przywódcą:
+A) demokratycznym
+B) leseferystycznym
+C) autokratycznym
+D) tradycyjnym
+E) liberalnym
+Correct: C;

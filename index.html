@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Auto-Loaded Shuffled Quiz</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      .question-block {
+        margin-bottom: 20px;
+        padding: 10px;
+        border-radius: 5px;
+      }
+      .correct {
+        color: green;
+        font-weight: bold;
+      }
+      .wrong-block {
+        background-color: #ffe5e5;
+        border: 1px solid red;
+      }
+      .score {
+        font-size: 20px;
+        margin-top: 20px;
+        font-weight: bold;
+      }
+      .green {
+        color: green;
+      }
+      .yellow {
+        color: goldenrod;
+      }
+      .red {
+        color: red;
+      }
+      ul {
+        list-style-type: none;
+        padding-left: 0;
+      }
+      li {
+        margin-bottom: 5px;
+      }
+      button {
+        margin-top: 20px;
+        padding: 10px 15px;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Quiz</h2>
+    <div id="quizContainer"></div>
+    <div id="scoreDisplay" class="score"></div>
+
+    <script>
+      const quizURL = "/questions.txt"; // 🔁 Replace with your actual URL
+      let quizData = [];
+
+      // Shuffle helper
+      function shuffleArray(arr) {
+        return arr
+          .map((v) => [Math.random(), v])
+          .sort((a, b) => a[0] - b[0])
+          .map((v) => v[1]);
+      }
+
+      function loadQuiz() {
+        fetch(quizURL)
+          .then((response) => {
+            if (!response.ok) throw new Error("Failed to load quiz.");
+            return response.text();
+          })
+          .then((text) => {
+            processQuestions(text);
+          })
+          .catch((error) => {
+            document.getElementById(
+              "quizContainer"
+            ).innerHTML = `<p style="color:red;">Error: ${error.message}</p>`;
+          });
+      }
+
+      function processQuestions(input) {
+        const questionChunks = shuffleArray(
+          input
+            .split(";")
+            .map((chunk) => chunk.trim())
+            .filter(Boolean)
+        );
+        const quizContainer = document.getElementById("quizContainer");
+        quizContainer.innerHTML = "";
+        quizData = [];
+
+        questionChunks.forEach((chunk, index) => {
+          const questionMatch = chunk.match(/Question:\s*(.*)/i);
+          const correctMatch = chunk.match(/Correct:\s*([A-E])/i);
+          const answers = {};
+          const answerRegex = /([A-E])\)\s*(.*)/g;
+          let match;
+
+          while ((match = answerRegex.exec(chunk)) !== null) {
+            answers[match[1]] = match[2];
+          }
+
+          if (
+            !questionMatch ||
+            !correctMatch ||
+            Object.keys(answers).length !== 5
+          ) {
+            quizContainer.innerHTML += `<div class="question-block"><p style="color:red;">Invalid format in question ${
+              index + 1
+            }</p></div>`;
+            return;
+          }
+
+          const correctLetter = correctMatch[1].toUpperCase();
+          const correctAnswerText = answers[correctLetter];
+
+          const shuffledAnswers = shuffleArray(
+            Object.entries(answers).map(([letter, text]) => ({
+              text,
+              isCorrect: text === correctAnswerText,
+            }))
+          );
+
+          quizData.push({
+            question: questionMatch[1],
+            answers: shuffledAnswers,
+            correctAnswer: correctAnswerText,
+            userChoice: null,
+          });
+
+          const block = document.createElement("div");
+          block.classList.add("question-block");
+          block.innerHTML = `
+      <p><strong>Q${index + 1}:</strong> ${questionMatch[1]}</p>
+      <ul>
+        ${shuffledAnswers
+          .map(
+            (ans, idx) => `
+          <li>
+            <label>
+              <input type="radio" name="q${index}" value="${idx}">
+              ${String.fromCharCode(65 + idx)}) ${ans.text}
+            </label>
+          </li>
+        `
+          )
+          .join("")}
+      </ul>
+    `;
+          quizContainer.appendChild(block);
+        });
+
+        // Append submit button at the end
+        const submitBtn = document.createElement("button");
+        submitBtn.textContent = "Submit";
+        submitBtn.id = "submitBtn"; // ← Add ID for reference
+        submitBtn.onclick = submitAnswers;
+        quizContainer.appendChild(submitBtn);
+
+        document.getElementById("scoreDisplay").innerHTML = "";
+      }
+
+      function submitAnswers() {
+        let correctCount = 0;
+
+        quizData.forEach((q, index) => {
+          const selected = document.querySelector(
+            `input[name="q${index}"]:checked`
+          );
+          const block = document.querySelectorAll(".question-block")[index];
+
+          if (selected) {
+            const chosenIndex = parseInt(selected.value);
+            quizData[index].userChoice = chosenIndex;
+
+            if (q.answers[chosenIndex].isCorrect) {
+              correctCount++;
+            } else {
+              block.classList.add("wrong-block");
+            }
+          } else {
+            block.classList.add("wrong-block");
+          }
+
+          const answerList = block.querySelectorAll("li");
+          answerList.forEach((li, j) => {
+            if (q.answers[j].isCorrect) {
+              li.innerHTML += ' <span class="correct">(Correct Answer)</span>';
+            }
+          });
+        });
+
+        const total = quizData.length;
+        const percentage = Math.round((correctCount / total) * 100);
+        let colorClass = "red";
+        if (percentage >= 75) colorClass = "green";
+        else if (percentage >= 50) colorClass = "yellow";
+
+        document.getElementById("scoreDisplay").innerHTML = `
+    You got <span class="${colorClass}">${percentage}%</span> correct!
+    <br>Score: ${correctCount}/${total}
+  `;
+
+        // Remove submit button
+        const submitBtn = document.getElementById("submitBtn");
+        if (submitBtn) submitBtn.remove();
+
+        // Add restart button
+        const restartBtn = document.createElement("button");
+        restartBtn.textContent = "Restart Quiz";
+        restartBtn.onclick = () => location.reload();
+        document.getElementById("quizContainer").appendChild(restartBtn);
+      }
+
+      // Auto-load quiz on page load
+      window.onload = loadQuiz;
+    </script>
+  </body>
+</html>
